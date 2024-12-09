@@ -4,10 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prisma-seed": "tsx prisma/seeds.ts"
+    "prisma-seed": "tsx prisma/seeds.ts",
+    "postinstall": "prisma generate",
+    "build": "prisma generate && next build"
   },
   "dependencies": {
     "@prisma/client": "^6.0.1",
